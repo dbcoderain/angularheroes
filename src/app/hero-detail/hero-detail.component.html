@@ -1,0 +1,16 @@
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}}</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div><span>name: </span>{{hero.name}}</div>
+  <div><span>dob: </span>{{hero.dob | date: "dd/MM/yyyy"}}</div>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name of hero"
+        (change)="heroNameChange()"
+        (keypress)="heroNameKeypress($event)"
+        (blur)="heroNameBlur()">
+    </label>
+
+  </div>
+</div>
